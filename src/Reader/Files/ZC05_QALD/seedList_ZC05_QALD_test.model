@@ -1,0 +1,144 @@
+//
+is	((S/((S\NP)/NP))/NP)	?x ?g ask(g(?x))
+is	((S/NP)/NP)	?x ?g ask(g(?x))
+cola	NP	http://dbpedia.org/resource/Cola
+//
+ingredients	N	?x NULL(?x http://www.w3.org/2002/07/owl#Thing)
+do i need for	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/ingredient(?x ?y)
+carrot cake	NP	http://dbpedia.org/resource/Carrot_cake
+//
+//
+countries	N	?x NULL(?x http://www.w3.org/2002/07/owl#Thing)
+can you pay using	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/currency(?y ?x)
+west african cfa franc	NP	http://dbpedia.org/resource/West_African_CFA_franc
+//
+does	((S/(S\NP))/NP)	?x ?g ask(g(?x))
+isar	NP	http://dbpedia.org/resource/Isar
+flow into	((S\NP)/NP)	?g ?y ?x and(g(?x) http://dbpedia.org/ontology/inflow(?x ?y))
+//
+german	(N/N)	?g ?x and(g(?x) http://dbpedia.org/ontology/country(?x http://dbpedia.org/resource/Germany))
+rivers	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://dbpedia.org/ontology/River)
+//
+grandchildren	(N/NP)	?x ?z ?y and(http://dbpedia.org/ontology/child(?x ?y) http://dbpedia.org/ontology/child(?y ?z))
+bruce lee	NP	http://dbpedia.org/resource/Bruce_Lee
+//
+does	((S/(S\NP))/NP)	?x ?g ?y g(?y ?x)
+was	((S/(S\NP))/NP)	?x ?g ?y g(?x ?y)
+what	(S/(S/NP))	NULL
+cpu	NP	"CPU"
+stand for	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/abbreviation(?y ?x)
+//
+countries	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://www.w3.org/2002/07/owl#Thing)
+run through	((S/NP)\NP)	?x ?y http://dbpedia.org/property/country(?x ?y)
+himalayas	NP	http://dbpedia.org/resource/Himalayas
+capitals	(N/NP)	?g ?x ?y and(g(?y) http://dbpedia.org/ontology/capital(?y ?x))
+//
+born	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/birthPlace(?y ?x)
+born	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/birthPlace(?x ?y)
+born in	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/birthPlace(?y ?x)
+was	((S/(S\NP))/NP)	NULL
+//
+how many inhabitants	(S/(S\NP))	?g ?x ?y lambda[g(?x) http://dbpedia.org/ontology/populationTotal(?x ?y)]
+//
+largest city in	(N/NP)	?x ?y http://dbpedia.org/ontology/largestCity(?x ?y)
+//
+first to climb	(N/NP)	?x ?y http://dbpedia.org/ontology/firstAscentPerson(?x ?y)
+//
+berlin	NP	http://dbpedia.org/resource/Berlin
+canada	NP	http://dbpedia.org/resource/Canada
+mount everest	NP	http://dbpedia.org/resource/Mount_Everest
+//
+official color	(N/NP)	?x ?y http://dbpedia.org/ontology/officialSchoolColour(?x ?y)
+//
+university of oxford	NP	http://dbpedia.org/resource/University_of_Oxford
+the three dancers	NP	http://dbpedia.org/resource/The_Three_Dancers
+//
+painter	(N/NP)	?x ?y http://dbpedia.org/ontology/author(?x ?y)
+//
+artistic movement	N	?x ?y http://dbpedia.org/ontology/movement(?x ?y)
+//
+belong	((S\NP)/NP)	NULL
+//
+spaceflights	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://www.w3.org/2002/07/owl#Thing)
+//
+launched from	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/launchSite(?y ?x)
+//
+baikonur	NP	http://dbpedia.org/resource/Baikonur_Cosmodrome
+//
+animals	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://dbpedia.org/ontology/Animal)
+extinct	N	?x http://dbpedia.org/ontology/conservationStatus(?x "EX")
+//
+lake placid	NP	http://dbpedia.org/resource/Lake_Placid_(Texas)
+//
+how deep	(S/(S\NP))	?x ?y http://dbpedia.org/ontology/depth(?x ?y)
+how deep	(S/NP)	?x ?y http://dbpedia.org/ontology/depth(?x ?y)
+//
+bach	NP	http://dbpedia.org/resource/Johann_Sebastian_Bach
+//
+cause of death	N	?x ?y http://dbpedia.org/ontology/deathCause(?x ?y)
+//
+most frequent	(NP/N)	?g ?x argmax(g(?x))
+//
+nobel prize in literature	NP	http://dbpedia.org/resource/Nobel_Prize_in_Literature
+//
+won	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/award(?y ?x)
+won	((N\N)/NP)	?x g ?x0 g(?x0) and ?x ?y http://dbpedia.org/ontology/award(?y ?x)
+won	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/award(?x ?y)
+won	(N/NP)	?x ?y http://dbpedia.org/ontology/award(?x ?y)
+won	((S/NP)\NP)	?x ?y http://dbpedia.org/ontology/award(?x ?y)
+//
+how many pages	(S/(S/NP))	?x ?y http://dbpedia.org/ontology/numberOfPages(?x ?y)
+//
+war and peace	NP	http://dbpedia.org/resource/War_and_Peace
+//
+youngest	(NP/N)	?g ?x argmax(g(?x) FUNCTION:[?s ?x http://dbpedia.org/ontology/birthDate(?x ?s)] AGG_VARIABLE:[?s] RETURN_VARIABLE:[?x])
+//
+longest span	(NP/N)	?g ?x argmax(g(?x) FUNCTION:[?s ?x http://dbpedia.org/ontology/mainspan(?x ?s)] AGG_VARIABLE:[?s] RETURN_VARIABLE:[?x])
+with	((NP\N)/(NP/N))	NULL
+//
+tallest	(NP/N)	?g ?x argmax(g(?x) FUNCTION:[?s ?x http://dbpedia.org/ontology/height(?x ?s)] AGG_VARIABLE:[?s] RETURN_VARIABLE:[?x])
+//
+player	(N/NP)	?x ?y http://dbpedia.org/ontology/team(?y ?x)
+atlanta falcons	NP	http://dbpedia.org/resource/Atlanta_Falcons
+//
+//pope	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://dbpedia.org/ontology/Pope)
+//pope	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://www.w3.org/2002/07/owl#Thing)
+//
+john paul ii	NP	http://dbpedia.org/resource/Pope_John_Paul_II
+//
+succeeded	((S\NP)/NP)	?x ?y http://dbpedia.org/property/successor(?x ?y)
+//
+parties	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://dbpedia.org/ontology/PoliticalParty)
+dutch	(N/N)	?g ?x and(g(?x) http://dbpedia.org/ontology/country(?x http://dbpedia.org/resource/Netherlands))
+//
+when	(S/(S/NP))	?x ?y http://dbpedia.org/property/date(?x ?y)
+when	(S/(S\NP))	?x ?y http://dbpedia.org/property/date(?x ?y)
+//
+halloween	NP	http://dbpedia.org/resource/Halloween
+//
+swedish	(N/N)	?g ?x and(g(?x) http://dbpedia.org/ontology/birthPlace(?x http://dbpedia.org/resource/Sweden))
+oceanographers	N	?x http://dbpedia.org/ontology/field(?x http://dbpedia.org/resource/Oceanography)
+//
+taikonauts	N	?x http://www.w3.org/1999/02/22-rdf-syntax-ns#type(?x http://dbpedia.org/ontology/Astronaut) and ?x http://dbpedia.org/ontology/nationality(?x http://dbpedia.org/resource/China)
+//
+colombia	NP	http://dbpedia.org/resource/Colombia
+//
+spoken in	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/language(?x ?y)
+//
+played	((S\NP)/NP)	?x ?y http://dbpedia.org/property/portrayer(?x ?y)
+//
+chewbacca	NP	http://dbpedia.org/resource/Chewbacca
+//
+married to	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/spouse(?y ?x)
+married to	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/spouse(?x ?y)
+married to	((S/NP)\NP)	?x ?y http://dbpedia.org/ontology/spouse(?x ?y)
+//
+tom cruise	NP	http://dbpedia.org/resource/Tom_Cruise
+//
+married	((S\NP)/NP)	?x ?y http://dbpedia.org/ontology/spouse(?x ?y)
+//
+james bond	NP	http://dbpedia.org/resource/James_Bond
+carlo giuliani	NP	http://dbpedia.org/resource/Death_of_Carlo_Giuliani
+//
+shot	((S\NP)/NP)	?x ?y http://dbpedia.org/property/dateOfDeath(?x ?y)
+//

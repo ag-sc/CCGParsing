@@ -1,0 +1,11 @@
+a	(((S\NP)\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+are	((S\NP)/NP)	NULL
+the	(NP/N)	NULL
+capitals	(N/N)	?g ?x capital:t(?x) g(?x)
+of	((S\NP)/NP)	?y ?x loc:t(?x ?y)
+that	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+states	N	?x state:t(?x)
+city	N	?x city:t(?x)
+border	((S\NP)/NP)	?x ?y next_to:t(?y ?x)
+named	((N\N)/NP)	?y ?g ?x loc:t(?x ?y) g(?x)
+have	((S\NP)/NP)	?x ?y loc:t(?y ?x)

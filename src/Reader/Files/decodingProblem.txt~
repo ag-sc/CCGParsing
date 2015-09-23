@@ -1,0 +1,120 @@
+which books by kerouac were published by viking press
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Book .
+        ?uri dbo:publisher res:Viking_Press .
+        ?uri dbo:author res:Jack_Kerouac .
+}
+
+who is the youngest player in the premier league
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Soccer_Player  .
+        ?x dbo:league res:Premier_League . 
+        ?uri dbo:birthDate ?y . 
+} ORDER BY DESC(?y) 
+OFFSET 0 LIMIT 1
+
+give me all breeds of the german shepherd dog
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbp:breed res:German_Shepherd . 
+}
+
+who are the parents of the wife of juan carlos i
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Juan_Carlos_I_of_Spain dbo:spouse ?x . 
+        ?x dbo:parent ?uri . 
+}
+
+which professional surfers were born in australia
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Surfing .  
+        ?uri dbo:birthPlace res:Australia . 
+}
+
+give me all islands that belong to japan
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Island .  
+        ?uri dbo:country res:Japan . 
+}
+
+how many languages are spoken in turkmenistan
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT (COUNT(DISTINCT ?uri) as ?ss) 
+WHERE { 
+        res:Turkmenistan dbo:language ?uri . 
+	?uri rdf:type dbo:Language .
+}
+
+who painted the storm on the sea of galilee
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:The_Storm_on_the_Sea_of_Galilee dbo:author ?uri .
+}
+
+give me a list of all bandleaders that play trumpet
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Bandleader . 
+        ?uri dbo:instrument res:Trumpet . 
+}
+
+in which city was the former dutch queen juliana buried
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Juliana_of_the_Netherlands dbo:restingPlace ?uri.
+        ?uri rdf:type dbo:Settlement .
+}
+
+in which u.s. state is fort knox located
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Fort_Knox dbp:location ?uri .  
+        ?uri dbo:country res:United_States . 
+}
+
+give me all cars that are produced in germany
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Automobile . 
+       ?uri dbo:assembly res:Germany . 
+       
+      
+}
+
+

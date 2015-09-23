@@ -1,0 +1,7 @@
+who is the owner of universal studios
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Universal_Studios dbo:owner ?uri .
+}

@@ -1,0 +1,33 @@
+//
+is	((S/((S\NP)/NP))/NP)	?x ?g ask(g(?x))
+is	((S/NP)/NP)	?x ?g ask(g(?x))
+was	((S/(S\NP))/NP)	NULL
+does	((S/(S\NP))/NP)	?x ?g ask(g(?x))
+does	((S/(S\NP))/NP)	?x ?g ?y g(?y ?x)
+what	(S/(S/NP))	NULL
+with	((NP\N)/(NP/N))	NULL
+//
+cola	NP	http://dbpedia.org/resource/Cola
+west african cfa franc	NP	http://dbpedia.org/resource/West_African_CFA_franc
+isar	NP	http://dbpedia.org/resource/Isar
+bruce lee	NP	http://dbpedia.org/resource/Bruce_Lee
+cpu	NP	"CPU"
+himalayas	NP	http://dbpedia.org/resource/Himalayas
+berlin	NP	http://dbpedia.org/resource/Berlin
+canada	NP	http://dbpedia.org/resource/Canada
+mount everest	NP	http://dbpedia.org/resource/Mount_Everest
+university of oxford	NP	http://dbpedia.org/resource/University_of_Oxford
+the three dancers	NP	http://dbpedia.org/resource/The_Three_Dancers
+baikonur	NP	http://dbpedia.org/resource/Baikonur_Cosmodrome
+lake placid	NP	http://dbpedia.org/resource/Lake_Placid_(Texas)
+bach	NP	http://dbpedia.org/resource/Johann_Sebastian_Bach
+nobel prize in literature	NP	http://dbpedia.org/resource/Nobel_Prize_in_Literature
+war and peace	NP	http://dbpedia.org/resource/War_and_Peace
+atlanta falcons	NP	http://dbpedia.org/resource/Atlanta_Falcons
+john paul ii	NP	http://dbpedia.org/resource/Pope_John_Paul_II
+halloween	NP	http://dbpedia.org/resource/Halloween
+colombia	NP	http://dbpedia.org/resource/Colombia
+chewbacca	NP	http://dbpedia.org/resource/Chewbacca
+tom cruise	NP	http://dbpedia.org/resource/Tom_Cruise
+james bond	NP	http://dbpedia.org/resource/James_Bond
+carlo giuliani	NP	http://dbpedia.org/resource/Death_of_Carlo_Giuliani

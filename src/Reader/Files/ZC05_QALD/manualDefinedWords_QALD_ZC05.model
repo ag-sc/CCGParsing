@@ -1,0 +1,116 @@
+//
+'s	((N\NP)/(N/NP))	NULL
+give me	(S/NP)	?x lambda(?x)
+a	(NP/N)	NULL
+a	(NP/NP)	NULL
+all	(NP/N)	NULL
+all	(NP/NP)	NULL
+and	(((N\N)\(N\N))/(N\N))	NULL
+and	((N\N)/N)	NULL
+and	((NP\NP)/NP)	NULL
+and	((((S\NP)/NP)\((S\NP)/NP))/((S\NP)/NP))	NULL
+and	(((S/NP)\(S/NP))/(S/NP))	NULL
+and	(((S\NP)\(S\NP))/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+are	((N\N)/(N\N))	NULL
+are	((NP\N)/(NP/N))	NULL
+are	((S\NP)/(N\N))	NULL
+are	((S\NP)/N)	NULL
+are	((S\NP)/NP)	NULL
+are	((S\NP)/(S\NP))	NULL
+are	((S\NP)/(S/NP))	NULL
+//are	((S/(S\NP))/NP)	NULL
+are there	((N\N)/(N\N))	NULL
+are there	(NP/NP)	NULL
+are there	(S\NP)	NULL
+are there	((S\NP)/(S\NP))	NULL
+been	((S\NP)/NP)	NULL
+been	(((S\NP)/NP)/((S\NP)/NP))	NULL
+been	((S\NP)/(S\NP))	NULL
+by	(NP/NP)	NULL
+did	(((S\NP)/((S\NP)/NP))/NP)	NULL
+did	((S/(S\NP))/NP)	NULL
+does	((NP/((S\NP)/NP))/NP)	NULL
+does	((S/NP)/(S/NP))	NULL
+does	((S\NP)/(S\NP))	NULL
+does	((S/(S\NP))/NP)	NULL
+does	((S/(S\NP))/NP)	?x ?g ask(g(?x))
+does	((S/(S\NP))/N)	?h ?g ?x ask(g(?x) and h(?x))
+does	((S/(S\NP))/NP)	?x ?g ?y g(?y ?x)
+do	((S/(S\NP))/NP)	NULL
+give me	(S/NP)	NULL
+give me	(S/NP)	?x lambda(?x)
+give me a list of	(S/NP)	?x lambda(?x)
+has	(((S\NP)\N)/(NP/N))	NULL
+has	((S\NP)/(NP/N))	NULL
+has	((S\NP)/NP)	NULL
+have	((S\NP)/(NP/N))	NULL
+have	((S\NP)/NP)	NULL
+have	((S/NP)/(S/NP))	NULL
+how many	(S/N)	NULL
+how many	(S/N)	?x count(?x)
+how many	((S/(S/NP))/N)	?h ?g ?x count(g(?x) and h(?x))
+how many	((S/(S\NP))/N)	?h ?g ?x count(g(?x) and h(?x))
+how many	((S/(S/NP))/((S\NP)/NP))	NULL
+how many	((S/(S\NP))/((S\NP)/NP))	NULL
+how many	((S/(S\NP))/N)	?x count(?x)
+how many	((S/(S/NP))/N)	?x count(?x)
+how often	(S/(S/NP))	?x count(?x)
+is	((NP\N)/(NP/N))	NULL
+is	((S\NP)/NP)	NULL
+is	((S/NP)/(S/NP))	NULL
+is	((S\NP)/(S\NP))	NULL
+is	((S/((S\NP)/NP))/NP)	?x ?g ask(g(?x))
+is	((S/NP)/NP)	?x ?g ask(g(?x))
+//is	((S/(S\NP))/NP)	NULL
+list	(NP/NP)	NULL
+list	(S/NP)	NULL
+list	(S/NP)	?x lambda(?x)
+of	((N\N)/NP)	?h ?g ?x and(g(?x) h(?x))
+of	(NP/NP)	NULL
+some	(NP/N)	NULL
+that	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/NP)	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+the	(NP/N)	NULL
+the	(NP/NP)	NULL
+was	((S\NP)/NP)	NULL
+was	((S\NP)/N)	NULL
+was	(((S\NP)/NP)/((S\NP)/NP))	NULL
+was	((S\NP)/(S\NP))	NULL
+was	((S/(S\NP))/NP)	NULL
+was	((S/(S\NP))/NP)	?x ?g ?y g(?x ?y)
+was	((S/(S\NP))/NP)	NULL
+were	((S\NP)/NP)	NULL
+were	(((S\NP)/NP)/((S\NP)/NP))	NULL
+were	((S\NP)/(S\NP))	NULL
+were	((S/(S\NP))/NP)	NULL
+what	NP	NULL
+what	NP	?x lambda(?x)
+what	((S/(S/NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+what	((S/(S\NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+what	((S/(S\NP))/N)	NULL
+what	(S/(S/NP))	NULL
+when	(S/(S/NP))	?x lambda(?x)
+when	(S/(S\NP))	?x lambda(?x)
+where	(S/(S/NP))	?x lambda(?x)
+where	(S/(S\NP))	?x lambda(?x)
+which	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+which	NP	NULL
+which	(S/NP)	NULL
+which	((S/(S/NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+which	((S/(S\NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+in which	((S/(S/NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+in which	((S/(S\NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+to which	((S/(S/NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+to which	((S/(S\NP))/N)	?h ?g ?x lambda(g(?x) and h(?x))
+who	NP	NULL
+who	((N\N)/NP)	?h ?g ?x and(g(?x) h(?x))
+who	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+who	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+who	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+with	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+with	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+with	((NP\N)/(NP/N))	NULL

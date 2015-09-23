@@ -1,0 +1,44 @@
+//
+are there	(S\NP)	NULL
+are there	(NP/NP)	NULL
+are there	((S\NP)/(S\NP))	NULL
+are there	((N\N)/(N\N))	NULL
+are located	((N\N)/(N\N))	NULL
+has	((S\NP)/NP)	?x ?y loc:t(?y ?x)
+has	(((S\NP)\N)/(NP/N))	NULL
+have	((S\NP)/NP)	?x ?y loc:t(?y ?x)
+have	((S/NP)\NP)	?x ?y loc:t(?y ?x)
+have	((S/NP)/(S/NP))	NULL
+have	((S\NP)/NP)	NULL
+have	((S\NP)/(NP/N))	NULL
+is	((NP\N)/(NP/N))	NULL
+is	((S/NP)/(S/NP))	NULL
+is	((S\NP)/(S\NP))	NULL
+//new added => what are the populations of all the major cities in montana
+the	((NP\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+the	(((S\NP)\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+a	((NP\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+a	(((S\NP)\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+that	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+are	((N\N)/(N\N))	NULL
+are	((S\NP)/(N\N))	NULL
+are	((NP\N)/(NP/N))	NULL
+does	((S/NP)/(S/NP))	NULL
+does	((S\NP)/(S\NP))	NULL
+does	((S/(S\NP))/NP)	NULL
+does	((NP/((S\NP)/NP))/NP)	NULL
+tell me	(S/S)	NULL
+can you	(S/S)	NULL
+please	(S/S)	NULL
+please	(S\S)	NULL
+in feet	(S\S)	NULL
+in meters	(S\S)	NULL
+in miles	(S\S)	NULL
+could you tell me	(S/S)	NULL
+by	(N/N)	NULL
+by	(NP/NP)	NULL

@@ -1,0 +1,245 @@
+
+options {
+  LOOKAHEAD = 10;
+  CHOICE_AMBIGUITY_CHECK = 2;
+  OTHER_AMBIGUITY_CHECK = 1;
+  STATIC = false;
+  DEBUG_PARSER = false;
+  DEBUG_LOOKAHEAD = false;
+  DEBUG_TOKEN_MANAGER = false;
+  ERROR_REPORTING = true;
+  JAVA_UNICODE_ESCAPE = false;
+  UNICODE_INPUT = false;
+  IGNORE_CASE = false;
+  USER_TOKEN_MANAGER = false;
+  USER_CHAR_STREAM = false;
+  BUILD_PARSER = true;
+  BUILD_TOKEN_MANAGER = true;
+  SANITY_CHECK = true;
+  FORCE_LA_CHECK = true;
+}
+
+PARSER_BEGIN(ExpressionParser)
+
+package LambdaCalculus.Parser;
+
+import LambdaCalculus.*;
+import java.util.List;
+import java.util.ArrayList;
+
+public class ExpressionParser {
+
+  /** Main entry point. */
+  public static void main(String args[]) throws ParseException {
+    ExpressionParser parser = new ExpressionParser(System.in);
+    parser.Input();
+  }
+
+}
+
+PARSER_END(ExpressionParser)
+
+/** Root production. */
+void Input() :
+{}
+{
+  parse() <EOF>
+}
+
+
+Expression parse() :
+{
+    Variable var = null;
+    Expression left = null;
+    Expression right = null;
+    Token t=null;
+    Token t2=null;
+    Token t3=null;
+    List<Term> terms = null;
+}
+{
+
+<LAMBDA> t=<VARIABLE> <LPAR> [left = parse()] <RPAR> //lambda x(....)
+{
+    LambdaAbstraction abs = new LambdaAbstraction();
+    abs.setVar(new Variable(t.toString().replace("Var-","")));
+    abs.setBody(left);
+
+    return abs;
+}
+|
+t=<ARGMIN_OR_MAX> t2=<VARIABLE> <LPAR> [left=parse()] <RPAR>  <LPAR> [right=parse()] <RPAR> //argmin AggregationVar (..) (.aggregationFunction.)
+{   
+    AggregationQuantifier agg = null;
+    if(t.toString().equals("argmin")){
+        agg = new AggregationQuantifier(left, right, AggregationQuantifier.Quantor.argmin, new Variable(t2.toString().replace("Var-","")));
+    }
+    else if(t.toString().equals("argmax")){
+        agg = new AggregationQuantifier(left, right, AggregationQuantifier.Quantor.argmax, new Variable(t2.toString().replace("Var-","")));
+    }
+    
+    return agg;
+}
+|
+
+<L_SQ_BRACKET>  [left=parse()] <R_SQ_BRACKET> //[ ... ]
+   {
+        return left;
+   }
+|
+<LPAR>  [left=parse()] <RPAR> //( ... )
+   {
+        return left;
+   }
+|
+<COUNT>  [left=parse()] //count ...
+   {
+        CountingQuantifier c = new CountingQuantifier(left, CountingQuantifier.Quantor.count);
+        return c;
+   }
+|
+<ASK>  [left=parse()] //count ...
+   {
+        ExistQuantifier c = new ExistQuantifier(left, ExistQuantifier.Quantor.ask);
+        return c;
+   }
+|
+<L_CURL_BRACKET>  t=<VARIABLE> <R_CURL_BRACKET> <APPLIED> t2=<VARIABLE> (right=parse())? //(Var-g)@Var-x AND ...
+   {
+        MultiConnector m = new MultiConnector();
+        FunctionalApplication f = new FunctionalApplication();
+        f.setFunction(new Variable(t.toString().replace("Var-","")));
+        f.setArgument(new Variable(t2.toString().replace("Var-","")));
+
+        m.add(f);
+
+        if(right!=null){
+            if(right instanceof MultiConnector){
+                MultiConnector mRight = (MultiConnector) right;
+                for(Expression p : mRight.getPredicates()){
+                    m.add(p);
+                }
+            }
+            if(right instanceof Atom){
+                m.add(right);
+            }
+            if(right instanceof FunctionalApplication){
+                m.add(right);
+            }
+            return m;
+        }
+        else{
+            return f;
+        }
+        
+   }
+|
+t=<PREDICATE> <LPAR> [terms = ListOfTerms()] <RPAR>  (right=parse())? //Pred-P(Var-x Var-y) (AND ... is optional)
+   {
+        Atom lf = new Atom();
+        String predicateName = t.toString().replace("Pred-","");
+
+        lf.setPredicate(predicateName);
+        
+        for(Term t1: terms)
+        {
+             lf.add(t1);
+        }
+        MultiConnector mf = new MultiConnector();
+        mf.add(lf);
+        if(right!=null){
+            if(right instanceof MultiConnector){
+                MultiConnector mRight = (MultiConnector) right;
+                for(Expression p : mRight.getPredicates()){
+                    mf.add(p);
+                }
+            }
+            if(right instanceof Atom){
+                mf.add(right);
+            }
+            if(right instanceof FunctionalApplication){
+                mf.add(right);
+            }
+            return mf;
+        }
+        else{
+            return lf;
+        }
+   }
+| <AND> [left=parse()] //AND (...)
+   {
+        if(left instanceof Atom){
+              return left;
+        }
+        if(left instanceof FunctionalApplication){
+              return left;
+        }
+        return left;
+   }
+| t=<VARIABLE>
+{
+    return new Variable(t.toString().replace("Var-",""));
+}
+| t=<CONSTANT>
+{
+    return new Constant(t.toString().replace("Cons-",""));
+}
+
+}
+
+/** ListOfTerms*/
+List<Term> ListOfTerms() :
+{
+    Token var = null;
+    List<Term> terms=null;
+    List<Term> rightTerms=null;
+}
+{
+   var=<VARIABLE> (rightTerms=ListOfTerms())?
+   {
+    terms = new ArrayList<Term>();
+    terms.add(new Variable(var.toString().replace("Var-","")));
+    if(rightTerms!=null){
+        for(Term t1: rightTerms){
+            terms.add(t1);
+        }
+    }
+    return terms;
+   }
+|
+   var=<CONSTANT> (rightTerms=ListOfTerms())?
+   {
+    terms = new ArrayList<Term>();
+    terms.add(new Constant(var.toString().replace("Cons-","")));
+    if(rightTerms!=null){
+        for(Term t1: rightTerms){
+            terms.add(t1);
+        }
+    }
+    return terms;
+   }
+}
+
+
+
+TOKEN: {<PREDICATE: (<PRED>)(["a"-"z","0"-"9","/", "A"-"Z",":",".","-","#"])+>}
+TOKEN: {<CONSTANT: (<CONS>)(["a"-"z","0"-"9","/", "A"-"Z",":",".","-","_", "\""," ","^", "@", "'", "#"])+>}
+TOKEN: {<VARIABLE: ("Var-")(["a"-"z","0"-"9",",","A"-"Z"])+>}
+TOKEN: {<LAMBDA: "lambda">}
+TOKEN: {<CONS: "Cons-">}
+TOKEN: {<PRED: "Pred-">}
+TOKEN: {<APPLIED: "@">}
+TOKEN: {<COUNT: "count">}
+TOKEN: {<ASK: "ask">}
+TOKEN: {<ARGMIN_OR_MAX: "argmin"|"argmax">}
+TOKEN: {<AND: "and">}
+TOKEN: {<L_SQ_BRACKET: "[">}
+TOKEN: {<R_SQ_BRACKET: "]">}
+TOKEN: {<L_CURL_BRACKET: "{">}
+TOKEN: {<R_CURL_BRACKET: "}">}
+TOKEN: {<LPAR: "(">}
+TOKEN: {<RPAR: ")">}
+
+SKIP : { " " | "\t" | "\n" | "\r" }
+
+TOKEN: {<LABEL: "l"(["0"-"9"])+>}

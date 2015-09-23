@@ -1,0 +1,7 @@
+how high	(S/(S\NP))	?x ?y http://dbpedia.org/ontology/elevation(?x ?y)
+how tall	(S/(S\NP))	?x ?y http://dbpedia.org/ontology/height(?x ?y)
+how tall	(S/NP)	?x ?y http://dbpedia.org/ontology/height(?x ?y)
+how high	(S/NP)	?x ?y http://dbpedia.org/ontology/elevation(?x ?y)
+was	(S/(S/NP))	?x ask(?x)
+are	(S/S)	?x ask(?x)
+is	(S/S)	?x ask(?x)

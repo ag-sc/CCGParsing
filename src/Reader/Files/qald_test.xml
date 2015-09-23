@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dataset id="qald-5_train">
+
+
+
+<question aggregation="false" answertype="resource" id="166" onlydbo="false">
+<string lang="en"><![CDATA[Which ships were called after Benjamin Franklin?]]></string>
+<string lang="de"><![CDATA[Welche Schiffe wurden nach Benjamin Franklin benannt?]]></string>
+<string lang="es"><![CDATA[¿Qué barcos fueron bautizados en honor a Benjamin Franklin?]]></string>
+<string lang="it"><![CDATA[Quali navi sono state battezzate in onore di Benjamin Franklin?]]></string>
+<string lang="fr"><![CDATA[Quels bâteaux portent le nom de Benjamin Franklin?]]></string>
+<string lang="nl"><![CDATA[Welke schepen zijn genoemd naar Benjamin Franklin?]]></string>
+<string lang="ro"><![CDATA[Ce nave au fost numite după Benjamin Franklin?]]></string>
+<keywords lang="en"><![CDATA[ship, called after, Benjamin Franklin]]></keywords>
+<keywords lang="de"><![CDATA[Schiff, benannt, Benjamin Franklin]]></keywords>
+<keywords lang="es"><![CDATA[barco, bautizado, honor, Benjamin Franklin]]></keywords>
+<keywords lang="it"><![CDATA[navem battezzare, onore, Benjamin Franklin]]></keywords>
+<keywords lang="fr"><![CDATA[bâteaux, nom, Benjamin Franklin]]></keywords>
+<keywords lang="nl"><![CDATA[schip, genoemd naar, Benjamin Franklin]]></keywords>
+<keywords lang="ro"><![CDATA[navă, numit după, Benjamin Franklin]]></keywords>
+<query><![CDATA[PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbp:shipNamesake res:Benjamin_Franklin . 
+	?uri rdf:type dbo:Ship .
+}]]></query>
+<answers>
+<answer>
+<uri>http://dbpedia.org/resource/USS_Franklin_(1815)</uri>
+</answer>
+<answer>
+<uri>http://dbpedia.org/resource/USS_Franklin_(1795)</uri>
+</answer>
+<answer>
+<uri>http://dbpedia.org/resource/Ben_Franklin_(PX-15)</uri>
+</answer>
+<answer>
+<uri>http://dbpedia.org/resource/HMS_Canopus_(1798)</uri>
+</answer>
+</answers>
+</question>
+
+</dataset>

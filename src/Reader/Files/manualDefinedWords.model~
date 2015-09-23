@@ -1,0 +1,78 @@
+//
+the	(NP/NP)	NULL
+the	(NP/N)	NULL
+the	(NP/(S\NP))	NULL
+did	((S/(S\NP))/NP)	NULL
+did	(((S\NP)/((S\NP)/NP))/NP)	NULL
+do	((S/(S\NP))/NP)	NULL
+give me	(S/NP)	lambda(?x)
+give me	(S/NP)	NULL
+name	(S/NP)	lambda(?x)
+name	(S/NP)	NULL
+list	(S/NP)	lambda(?x)
+list	(S/NP)	NULL
+show	(S/NP)	lambda(?x)
+show	(S/NP)	NULL
+show me	(S/NP)	lambda(?x)
+show me	(S/NP)	NULL
+all	(NP/N)	NULL
+all	(NP/NP)	NULL
+some	(NP/N)	NULL
+//where	(S/NP)	lambda(?x)
+where	(S/(S/NP))	lambda(?x)
+where	(S/(S\NP))	lambda(?x)
+//where	(S/NP)	?g ?x lambda(g(x) loc:t(x))
+who	NP	NULL
+and	((N\N)/N)	NULL
+and	((NP\NP)/NP)	NULL
+and	(((S\NP)\(S\NP))/(S\NP))	NULL
+and	(((N\N)\(N\N))/(N\N))	NULL
+and	(((S/NP)\(S/NP))/(S/NP))	NULL
+and	((((S\NP)/NP)\((S\NP)/NP))/((S\NP)/NP))	NULL
+//wwwhat	(NP/N)	NULL
+//wwwhich	(NP/N)	NULL
+how large	(S/NP)	size(?x)
+how long	(S/NP)	len(?x)
+how big	(S/NP)	size(?x)
+how high	(S/NP)	elevation(?x)
+how large	(S/(S\NP))	size(?x)
+how often	(S/(S/NP))	lambda(?x)
+how long	(S/(S\NP))	len(?x)
+how big	(S/(S\NP))	size(?x)
+how high	(S/(S\NP))	elevation(?x)
+how tall	(S/(S\NP))	elevation(?x)
+how tall	(S/NP)	elevation(?x)
+//how many people are there in	(S/NP)	lambda(?x)
+//how many people live in	(S/NP)	lambda(?x)
+//how many people lived in	(S/NP)	lambda(?x)
+//how many people reside in	(S/NP)	lambda(?x)
+//how many people stay in	(S/NP)	lambda(?x)
+//how many citizens live in	(S/NP)	lambda(?x)
+//how many residents live in	(S/NP)	lambda(?x)
+//how many citizens in	(S/NP)	lambda(?x)
+//how many people in	(S/NP)	lambda(?x)
+how many	(S/N)	?x count(?x)
+how many	(S/N)	NULL
+how many	((S/(S/NP))/N)	?x ?y count(?x and ?y)
+how many	((S/(S\NP))/N)	?x ?y count(?x and ?y)
+how many	((S/(S\NP))/N)	?x count(?x)
+what	((S/(S/NP))/N)	?x ?y lambda(?x and ?y)
+what	((S/(S\NP))/N)	?x ?y lambda(?x and ?y)
+what	((S/(S\NP))/N)	NULL
+what	NP	lambda(?x)
+//what	(S/N)	lambda(?x)
+what	NP	NULL
+which	NP	NULL
+which	(S/NP)	NULL
+which	((S/(S/NP))/N)	?x ?y lambda(?x and ?y)
+which	((S/(S\NP))/N)	?x ?y lambda(?x and ?y)
+was	(((S\NP)/NP)/((S\NP)/NP))	NULL
+was	((S\NP)/NP)	NULL
+were	(((S\NP)/NP)/((S\NP)/NP))	NULL
+were	((S\NP)/NP)	NULL
+has	((S\NP)/NP)	NULL
+has	((S\NP)/(NP/N))	NULL
+are	((S\NP)/(S\NP))	NULL
+are	((S\NP)/N)	NULL
+is	((S\NP)/NP)	NULL
+are	((S\NP)/NP)	NULL

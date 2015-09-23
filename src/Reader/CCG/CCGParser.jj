@@ -1,0 +1,116 @@
+
+options {
+  LOOKAHEAD = 40;
+  CHOICE_AMBIGUITY_CHECK = 2;
+  OTHER_AMBIGUITY_CHECK = 1;
+  STATIC = false;
+  DEBUG_PARSER = false;
+  DEBUG_LOOKAHEAD = false;
+  DEBUG_TOKEN_MANAGER = false;
+  ERROR_REPORTING = true;
+  JAVA_UNICODE_ESCAPE = false;
+  UNICODE_INPUT = false;
+  IGNORE_CASE = false;
+  USER_TOKEN_MANAGER = false;
+  USER_CHAR_STREAM = false;
+  BUILD_PARSER = true;
+  BUILD_TOKEN_MANAGER = true;
+  SANITY_CHECK = true;
+  FORCE_LA_CHECK = true;
+}
+
+PARSER_BEGIN(CCGParser)
+
+package Reader.CCG;
+
+import Grammar.*;
+
+public class CCGParser {
+
+  /** Main entry point. */
+  public static void main(String args[]) throws ParseException {
+    CCGParser parser = new CCGParser(System.in);
+    parser.Input();
+  }
+
+}
+
+PARSER_END(CCGParser)
+
+/** Root production. */
+void Input() :
+{}
+{
+  CCGRule() <EOF>
+}
+
+/** CCGRule */
+CCGCategory CCGRule() :
+{
+    CCGCategory left = null;
+    CCGCategory right = null;
+    CombinedCategory category = null;
+    AtomicCategory atomic =null;
+
+
+}
+{
+<LPAR>  [left=CCGRule()] <SLASH> [right=CCGRule()] <RPAR>
+   {
+       category = new CombinedCategory();
+       category.setOperator(CombinedCategory.Operator.slash);
+       category.setLeft(left);
+       category.setRight(right);
+       return category;
+   
+   }
+
+| <LPAR>  [left=CCGRule()] <BACKSLASH> [right=CCGRule()] <RPAR>
+   {
+       category = new CombinedCategory();
+       category.setOperator(CombinedCategory.Operator.backslash);
+       category.setLeft(left);
+       category.setRight(right);
+       return category;
+   
+   }
+|   <S>
+   {
+       atomic = new AtomicCategory();
+       atomic.setCategory("S");
+       return atomic;   
+   }
+|   <NP>
+   {
+       atomic = new AtomicCategory();
+       atomic.setCategory("NP");
+       return atomic;   
+   }
+|   <N>
+   {
+       atomic = new AtomicCategory();
+       atomic.setCategory("N");
+       return atomic;   
+   }
+     
+  
+}
+
+
+
+//TOKEN: {<WORD: (["?","!"])?(["a"-"z","A"-"Z",":","#"])+>}
+
+TOKEN: {<LPAR: "(">}
+
+TOKEN: {<SLASH: "/">}
+
+TOKEN: {<BACKSLASH: "\\">}
+
+TOKEN: {<RPAR: ")">}
+TOKEN: {<S: "S">}
+TOKEN: {<NP: "NP">}
+TOKEN: {<N: "N">}
+
+SKIP : { " " | "\t" | "\n" | "\r" }
+
+TOKEN: {<LABEL: "l"(["0"-"9"])+>}

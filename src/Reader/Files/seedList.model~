@@ -1,0 +1,113 @@
+//
+are there	(S\NP)	NULL
+are there	(NP/NP)	NULL
+are there	((S\NP)/(S\NP))	NULL
+are there	((N\N)/(N\N))	NULL
+are located	((N\N)/(N\N))	NULL
+state	N	?x state:t(?x)
+states	N	?x state:t(?x)
+river	N	?x river:t(?x)
+rivers	N	?x river:t(?x)
+cities	N	?x city:t(?x)
+towns	N	?x town:t(?x)
+population	(NP/NP)	?x population:i(?x)
+population	N	?x population:i(?x)
+population	(N/NP)	?x population:i(?x)
+population	((S\NP)/NP)	?x ?y population:t(?y ?x)
+population	(S/NP)	?x population:i(?x)
+density	N	?x density:i(?x)
+population density	N	?x density:i(?x)
+population density	(N/NP)	?x density:i(?x)
+border	((S\NP)/NP)	?x ?y next_to:t(?y ?x)
+has	((S\NP)/NP)	?x ?y loc:t(?y ?x)
+has	(((S\NP)\N)/(NP/N))	NULL
+have	((S\NP)/NP)	?x ?y loc:t(?y ?x)
+have	((S/NP)\NP)	?x ?y loc:t(?y ?x)
+have	((S/NP)/(S/NP))	NULL
+have	((S\NP)/NP)	NULL
+have	((S\NP)/(NP/N))	NULL
+major	(N/N)	?g ?x major:t(?x) g(?x)
+texas	(N/N)	?g ?x loc:t(?x texas:s) g(?x)
+states	(S/(S\NP))	?g ?x state:t(?x) g(?x)
+number	(S/N)	?g ?x count(g(?x))
+//is	(N/N)	NULL
+//is	(S/S)	NULL
+is	((NP\N)/(NP/N))	NULL
+//is	(NP/NP)	NULL
+is	((S/NP)/(S/NP))	NULL
+is	((S\NP)/(S\NP))	NULL
+a	(N/N)	NULL
+of	(N/N)	NULL
+of	((N\N)/NP)	?y ?g ?x loc:t(?x ?y) g(?x)
+//new added => what are the capitals of the states that border texas
+of	((S\NP)/NP)	?y ?x loc:t(?x ?y)
+of	(NP/NP)	NULL
+//new added => what are the populations of all the major cities in montana
+the	((NP\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+the	(((S\NP)\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+a	((NP\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+a	(((S\NP)\((S\NP)/NP))/N)	?h ?g ?x exists(g(?x) h(?x))
+//new added => how many people live in austin
+in	(NP/NP)	NULL
+in	((N\N)/NP)	?y ?g ?x loc:t(?x ?y) g(?x)
+in	((S/NP)\NP)	?y ?x loc:t(?y ?x)
+with	((N\N)/NP)	?y ?g ?x loc:t(?x ?y) g(?x)
+named	((N\N)/NP)	?y ?g ?x loc:t(?x ?y) g(?x)
+that	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+that	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S/NP))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(S\NP))	?h ?g ?x and(g(?x) h(?x))
+which	((N\N)/(N\N))	?h ?g ?x and(g(?x) h(?x))
+are	((N\N)/(N\N))	NULL
+are	((S\NP)/(N\N))	NULL
+are	((NP\N)/(NP/N))	NULL
+capital	((S\NP)/NP)	?x ?y capital:t(?y ?x)
+capital	(NP/NP)	?x capital:t(?x)
+capital	N	?x capital:t(?x)
+capital	(N/NP)	?x capital:t(?x)
+capital	(N/NP)	?x ?y capital:t(?y ?x)
+//new added => what are the capital cities of the states which border texas
+capital	(N/N)	?g ?x capital:t(?x) g(?x)
+number	(NP/N)	?g ?x count(g(?x))
+does	((S/NP)/(S/NP))	NULL
+does	((S\NP)/(S\NP))	NULL
+does	((S/(S\NP))/NP)	NULL
+//new added => how many inhabitants does montgomery have
+does	((NP/((S\NP)/NP))/NP)	NULL
+tell me	(S/S)	NULL
+can you	(S/S)	NULL
+please	(S/S)	NULL
+please	(S\S)	NULL
+in feet	(S\S)	NULL
+in meters	(S\S)	NULL
+//new added => how long is the mississippi river in miles
+in miles	(S\S)	NULL
+//new added
+could you tell me	(S/S)	NULL
+with	((NP\N)/(NP/N))	NULL
+by	(N/N)	NULL
+largest	(NP/N)	?g ?x argmax(g(?x) size:i(?x))
+biggest	(NP/N)	?g ?x argmax(g(?x) size:i(?x))
+lowest	(NP/N)	?g ?x argmin(g(?x) elevation:i(?x))
+smallest	(NP/N)	?g ?x argmin(g(?x) size:i(?x))
+longest	(NP/N)	?g ?x argmax(g(?x) len:i(?x))
+shortest	(NP/N)	?g ?x argmin(g(?x) len:i(?x))
+highest	(NP/N)	?g ?x argmax(g(?x) elevation:i(?x))
+largest	((NP/N)/(N\N))	?g ?h ?x argmax(g(?x) h(?x) size:i(?x))
+smallest	((NP/N)/(N\N))	?g ?h ?x argmin(g(?x) h(?x) size:i(?x))
+most	((NP/N)/N)	?h ?g ?x argmax(g(?x) h(?x))
+highest	((NP/N)/N)	?h ?g ?x argmax(g(?x) h(?x))
+biggest	((NP/N)/N)	?h ?g ?x argmax(g(?x) h(?x))
+largest	((NP/N)/N)	?h ?g ?x argmax(g(?x) h(?x))
+lowest	((NP/N)/N)	?h ?g ?x argmin(g(?x) h(?x))
+sparsest	((NP/N)/N)	?h ?g ?x argmin(g(?x) h(?x))
+smallest	((NP/N)/N)	?h ?g ?x argmin(g(?x) h(?x))
+least	((NP/N)/N)	?h ?g ?x argmin(g(?x) h(?x))
+largest	(((NP/N)/(N\N))/N)	?f ?g ?h ?x argmax(g(?x) h(?x) f(?x))
+smallest	(((NP/N)/(N\N))/N)	?f ?g ?h ?x argmin(g(?x) h(?x) f(?x))
+most	((NP/N)/N)	?h ?g ?x argmax(g(?x) h(?x))
+//just for test
+populations	((S\NP)/NP)	?y ?x population:t(?x ?y)
+capitals	(N/N)	?g ?x capital:t(?x) g(?x)
+called	((N\N)/NP)	?y ?x named:t(?x ?y)

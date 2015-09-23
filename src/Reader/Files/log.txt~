@@ -1,0 +1,546 @@
+debug:
+Reading in training data from src/Reader/Files/qald-5_train.xml
+log4j:WARN No appenders could be found for logger (org.apache.jena.riot.system.stream.JenaIOEnvironment).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+237/269
+Starting training process... 237 instances .
+Adding annotator tokenize
+TokenizerAnnotator: No tokenizer type provided. Defaulting to PTBTokenizer.
+Adding annotator ssplit
+edu.stanford.nlp.pipeline.AnnotatorImplementations:
+Adding annotator pos
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [2.3 sec].
+Adding annotator lemma
+Inducing grammar from instances...
+Starting the training process...
+Iteration #1
+Step1 parsing ... 
+Parsing : in which country does the ganges start Index: 0
+Number of Derivations : 21
+Parsing : Give me all cosmonauts Index: 1
+Number of Derivations : 8
+Parsing : who was john_f._kennedy 's vice president Index: 2
+Number of Derivations : 0
+Parsing : who is the mayor of berlin Index: 3
+Data Problem! Returned derivations: 128
+Number of Derivations : 0
+Parsing : how many students does the free_university_in_amsterdam have Index: 4
+Number of Derivations : 55
+Parsing : What is the second highest mountain on Earth Index: 5
+Number of Derivations : 0
+Parsing : give me all professional skateboarders from sweden Index: 6
+Data Problem! Returned derivations: 12
+Number of Derivations : 0
+Parsing : when was alberta admitted as province Index: 7
+Number of Derivations : 0
+Parsing : to which countries does the himalayan_mountain_system extend Index: 8
+Number of Derivations : 28
+Parsing : give me a list of all bandleaders that play trumpet Index: 9
+Number of Derivations : 0
+Parsing : Which countries have more than ten caves Index: 10
+Number of Derivations : 0
+Parsing : who produces orangina Index: 12
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : who is the youngest player in the premier_league Index: 15
+Data Problem! Returned derivations: 56
+Number of Derivations : 0
+Parsing : give me all members of prodigy Index: 16
+Number of Derivations : 64
+Parsing : What is the longest river Index: 17
+Number of Derivations : 0
+Parsing : give me all cars that are produced in germany Index: 18
+Data Problem! Returned derivations: 2
+Number of Derivations : 0
+Parsing : is proinsulin a protein Index: 20
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : how tall is michael_jordan Index: 21
+Data Problem! Returned derivations: 6
+Number of Derivations : 0
+Parsing : what is the capital of canada Index: 22
+Number of Derivations : 0
+Parsing : who is the governor of wyoming Index: 23
+Data Problem! Returned derivations: 28
+Number of Derivations : 0
+Parsing : do prince_harry and prince_william have the same parents Index: 24
+Number of Derivations : 0
+Parsing : who was the father of queen_elizabeth_ii Index: 25
+Data Problem! Returned derivations: 16
+Number of Derivations : 0
+Parsing : give me all movies directed by francis_ford_coppola Index: 26
+Number of Derivations : 8
+Parsing : give me all actors starring in movies directed by william_shatner Index: 27
+Number of Derivations : 0
+Parsing : are tree frogs a type of amphibian Index: 28
+Number of Derivations : 0
+Parsing : what is the birth name of angela_merkel Index: 29
+Number of Derivations : 0
+Parsing : give me all methodist politicians Index: 30
+Data Problem! Returned derivations: 48
+Number of Derivations : 0
+Parsing : how often did jane_fonda marry Index: 31
+Data Problem! Returned derivations: 48
+Number of Derivations : 0
+Parsing : give me all australian nonprofit organizations Index: 32
+Data Problem! Returned derivations: 120
+Number of Derivations : 0
+Parsing : in which military conflicts did lawrence_of_arabia participate Index: 33
+Number of Derivations : 0
+Parsing : who developed minecraft Index: 34
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : how many inhabitants does maribor have Index: 35
+Number of Derivations : 0
+Parsing : give me all companies in munich Index: 36
+Number of Derivations : 24
+Parsing : how tall is claudia_schiffer Index: 37
+Data Problem! Returned derivations: 6
+Number of Derivations : 0
+Parsing : list all games by gmt Index: 38
+Data Problem! Returned derivations: 512
+Number of Derivations : 0
+Parsing : who founded intel Index: 39
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : who is the husband of amanda_palmer Index: 40
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : give me all breeds of the german_shepherd_dog Index: 41
+Data Problem! Returned derivations: 320
+Number of Derivations : 0
+Parsing : which cities does the weser flow through Index: 42
+Number of Derivations : 0
+Parsing : which countries are connected by the rhine Index: 43
+Data Problem! Returned derivations: 240
+Number of Derivations : 0
+Parsing : which professional surfers were born in australia Index: 44
+Number of Derivations : 0
+Parsing : in which uk city are the headquarters of the mi6 Index: 45
+Number of Derivations : 0
+Parsing : who created goofy Index: 46
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : give me all islands that belong to japan Index: 47
+Data Problem! Returned derivations: 4
+Number of Derivations : 0
+Parsing : what is the ruling party in lisbon Index: 48
+Number of Derivations : 0
+Parsing : what are the nicknames of san_francisco Index: 49
+Data Problem! Returned derivations: 16
+Number of Derivations : 0
+Parsing : when were the hells_angels founded Index: 50
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : Give me all Apollo 14 astronauts Index: 51
+Data Problem! Returned derivations: 106
+Number of Derivations : 0
+Parsing : what is the time zone of salt_lake_city Index: 52
+Data Problem! Returned derivations: 66
+Number of Derivations : 0
+Parsing : how many missions does the soyuz_programme have Index: 53
+Number of Derivations : 8
+Parsing : did socrates influence aristotle Index: 54
+Data Problem! Returned derivations: 96
+Number of Derivations : 0
+Parsing : Give me all Danish movies Index: 55
+Number of Derivations : 79
+Parsing : give me all launch pads operated by nasa Index: 56
+Number of Derivations : 0
+Parsing : which instruments does cat_stevens play Index: 57
+Number of Derivations : 0
+Parsing : which ships were called after benjamin_franklin Index: 58
+Number of Derivations : 0
+Parsing : who are the parents of the wife of juan_carlos_i Index: 59
+Number of Derivations : 0
+Parsing : how many employees does google have Index: 60
+Number of Derivations : 0
+Parsing : did tesla win a nobel_prize_in_physics Index: 61
+Data Problem! Returned derivations: 288
+Number of Derivations : 0
+Parsing : is rita_wilson the wife of tom_hanks Index: 62
+Data Problem! Returned derivations: 256
+Number of Derivations : 0
+Parsing : when was the statue_of_liberty built Index: 63
+Number of Derivations : 8
+Parsing : in which u.s. state is fort_knox located Index: 64
+Number of Derivations : 0
+Parsing : how many children did benjamin_franklin have Index: 65
+Number of Derivations : 8
+Parsing : when did michael_jackson die Index: 66
+Data Problem! Returned derivations: 160
+Number of Derivations : 0
+Parsing : list the children of margaret_thatcher Index: 67
+Number of Derivations : 236
+Parsing : who was called frank_the_tank Index: 68
+Data Problem! Returned derivations: 48
+Number of Derivations : 0
+Parsing : was margaret_thatcher a chemist Index: 69
+Number of Derivations : 0
+Parsing : was marc_chagall a jew Index: 70
+Number of Derivations : 0
+Parsing : which museum exhibits the_scream by munch Index: 71
+Number of Derivations : 0
+Parsing : which books by kerouac were published by viking_press Index: 72
+Number of Derivations : 0
+Parsing : how high is the mount_everest Index: 73
+Data Problem! Returned derivations: 4
+Number of Derivations : 0
+Parsing : who created the comic_captain_america Index: 74
+Data Problem! Returned derivations: 64
+Number of Derivations : 0
+Parsing : how many people live in the capital of australia Index: 75
+Data Problem! Returned derivations: 40
+Number of Derivations : 0
+Parsing : what is the largest city in australia Index: 76
+Number of Derivations : 0
+Parsing : who composed the music for harold_and_maude Index: 77
+Number of Derivations : 0
+Parsing : which films starring clint_eastwood did he direct himself Index: 78
+Number of Derivations : 0
+Parsing : in which city was the former_dutch_queen_juliana buried Index: 79
+Number of Derivations : 0
+Parsing : where is the residence of the prime_minister_of_spain Index: 80
+Number of Derivations : 0
+Parsing : which movies did kurosawa direct Index: 81
+Number of Derivations : 0
+Parsing : Who wrote the lyrics for the Polish national anthem Index: 83
+Number of Derivations : 0
+Parsing : give me all b-sides of the ramones Index: 84
+Data Problem! Returned derivations: 320
+Number of Derivations : 0
+Parsing : who painted the_storm_on_the_sea_of_galilee Index: 85
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : which country does the creator of miffy_come_from Index: 86
+Number of Derivations : 0
+Parsing : for which label did elvis record his first album Index: 87
+Number of Derivations : 0
+Parsing : give me the birthdays of all actors of the television_show_charmed Index: 88
+Number of Derivations : 0
+Parsing : how many employees does ibm have Index: 89
+Number of Derivations : 0
+Parsing : which states border illinois Index: 90
+Number of Derivations : 0
+Parsing : in which country is the limerick_lake Index: 91
+Data Problem! Returned derivations: 339
+Number of Derivations : 0
+Parsing : which television shows were created by john_cleese Index: 92
+Number of Derivations : 0
+Parsing : in which films directed by garry_marshall was julia_roberts starring Index: 93
+Data Problem! Returned derivations: 19
+Number of Derivations : 0
+Parsing : was u.s._president_jackson involved in a war Index: 94
+Number of Derivations : 0
+Parsing : Give me all communist countries Index: 95
+Number of Derivations : 98
+Parsing : which awards did douglas_hofstadter win Index: 96
+Number of Derivations : 0
+Parsing : who is the daughter of robert_kennedy married to Index: 97
+Number of Derivations : 0
+Parsing : what is the currency of the czech_republic Index: 98
+Number of Derivations : 0
+Parsing : which countries adopted the euro Index: 99
+Number of Derivations : 27
+Parsing : what is the area code of berlin Index: 100
+Data Problem! Returned derivations: 66
+Number of Derivations : 0
+Parsing : Which countries have more than two official languages Index: 101
+Number of Derivations : 0
+Parsing : who is the owner of rolls-royce Index: 102
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : through which countries does the yenisei_river flow Index: 103
+Number of Derivations : 0
+Parsing : when did latvia join the eu Index: 104
+Number of Derivations : 0
+Parsing : Which monarchs were married to a German Index: 105
+Number of Derivations : 0
+Parsing : when was the battle_of_gettysburg Index: 106
+Data Problem! Returned derivations: 96
+Number of Derivations : 0
+Parsing : which river does the brooklyn_bridge cross Index: 107
+Number of Derivations : 0
+Parsing : what is the highest mountain in australia Index: 108
+Number of Derivations : 0
+Parsing : give me all soccer clubs in spain Index: 109
+Number of Derivations : 2
+Parsing : what is the official language of suriname Index: 110
+Data Problem! Returned derivations: 66
+Number of Derivations : 0
+Parsing : who is the mayor of tel_aviv Index: 111
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : who designed the brooklyn_bridge Index: 112
+Data Problem! Returned derivations: 64
+Number of Derivations : 0
+Parsing : Which telecommunications organizations are located in Belgium Index: 113
+Number of Derivations : 0
+Parsing : what is the highest place of the urals Index: 114
+Number of Derivations : 0
+Parsing : who is the editor of forbes Index: 115
+Data Problem! Returned derivations: 28
+Number of Derivations : 0
+Parsing : Give me all companies in the advertising industry Index: 116
+Number of Derivations : 0
+Parsing : what did bruce_carver die from Index: 117
+Number of Derivations : 0
+Parsing : give me all federal chancellors_of_germany Index: 118
+Data Problem! Returned derivations: 96
+Number of Derivations : 0
+Parsing : who was the wife of u.s._president_lincoln Index: 119
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : who developed the video game world_of_warcraft Index: 120
+Data Problem! Returned derivations: 202
+Number of Derivations : 0
+Parsing : what is the official website of tom_cruise Index: 121
+Data Problem! Returned derivations: 66
+Number of Derivations : 0
+Parsing : give me all people with first name jimmy Index: 123
+Number of Derivations : 0
+Parsing : in which city did john_f._kennedy die Index: 124
+Number of Derivations : 0
+Parsing : is there a video game called battle_chess Index: 125
+Number of Derivations : 0
+Parsing : who created wikipedia Index: 126
+Data Problem! Returned derivations: 12
+Number of Derivations : 0
+Parsing : give me all actors starring in last_action_hero Index: 127
+Number of Derivations : 3
+Parsing : which software has been developed by organizations founded in california Index: 128
+Number of Derivations : 0
+Parsing : is christian_bale starring in velvet_goldmine Index: 130
+Number of Derivations : 0
+Parsing : which actors were born in germany Index: 131
+Number of Derivations : 0
+Parsing : give me all films produced by hal_roach Index: 132
+Number of Derivations : 8
+Parsing : give me all video games published by mean_hamster_software Index: 133
+Number of Derivations : 2
+Parsing : which languages are spoken in estonia Index: 134
+Number of Derivations : 0
+Parsing : how many aldi stores are there Index: 135
+Number of Derivations : 0
+Parsing : who was the 16th president of the united_states Index: 136
+Number of Derivations : 0
+Parsing : how many films did hal_roach produce Index: 137
+Number of Derivations : 16
+Parsing : Which music albums contain the song Last Christmas Index: 138
+Number of Derivations : 0
+Parsing : give me all books written by danielle_steel Index: 139
+Number of Derivations : 8
+Parsing : which airports are located in california,_usa Index: 140
+Number of Derivations : 0
+Parsing : Give me all Canadian Grunge record labels Index: 141
+Number of Derivations : 12
+Parsing : in which programming language is gimp written Index: 142
+Number of Derivations : 0
+Parsing : who produced films starring natalie_portman Index: 143
+Data Problem! Returned derivations: 99
+Number of Derivations : 0
+Parsing : give me all movies with tom_cruise Index: 144
+Number of Derivations : 0
+Parsing : in which films did julia_roberts as well as richard_gere play Index: 145
+Number of Derivations : 0
+Parsing : Give me all female given names Index: 146
+Number of Derivations : 7
+Parsing : who wrote the book the_pillars_of_the_earth Index: 147
+Data Problem! Returned derivations: 152
+Number of Derivations : 0
+Parsing : how many films did leonardo_dicaprio star in Index: 148
+Data Problem! Returned derivations: 40
+Number of Derivations : 0
+Parsing : give me all soccer clubs in the premier_league Index: 149
+Number of Derivations : 0
+Parsing : when was capcom founded Index: 150
+Number of Derivations : 8
+Parsing : What is the highest mountain Index: 151
+Data Problem! Returned derivations: 8
+Number of Derivations : 0
+Parsing : was natalie_portman born in the united_states Index: 152
+Number of Derivations : 0
+Parsing : how many inhabitants does the largest city in canada have Index: 153
+Number of Derivations : 0
+Parsing : who was the first to climb mount_everest Index: 154
+Data Problem! Returned derivations: 4
+Number of Derivations : 0
+Parsing : How many programming languages are there Index: 155
+Number of Derivations : 0
+Parsing : what is the official color of the university_of_oxford Index: 156
+Number of Derivations : 0
+Parsing : to which artistic movement did the painter of the_three_dancers belong Index: 157
+Number of Derivations : 0
+Parsing : Give me all animals that are extinct Index: 158
+Number of Derivations : 0
+Parsing : does abraham_lincoln 's death place have a website Index: 159
+Number of Derivations : 0
+Parsing : how deep is lake_placid Index: 160
+Data Problem! Returned derivations: 6
+Number of Derivations : 0
+Parsing : give me the grandchildren of bruce_lee Index: 161
+Number of Derivations : 128
+Parsing : Who is the youngest Darts player Index: 162
+Data Problem! Returned derivations: 53
+Number of Derivations : 0
+Parsing : where was bach born Index: 163
+Number of Derivations : 8
+Parsing : in which countries can you pay using the west_african_cfa_franc Index: 164
+Number of Derivations : 0
+Parsing : does the isar flow into a lake Index: 166
+Number of Derivations : 0
+Parsing : Give me all taikonauts Index: 167
+Number of Derivations : 8
+Parsing : how many pages does war_and_peace have Index: 168
+Number of Derivations : 0
+Parsing : What is the bridge with the longest span Index: 169
+Number of Derivations : 0
+Parsing : give me all actors called baldwin Index: 170
+Data Problem! Returned derivations: 212
+Number of Derivations : 0
+Parsing : who is the tallest player of the atlanta_falcons Index: 171
+Number of Derivations : 0
+Parsing : Which rivers flow into a German lake Index: 172
+Number of Derivations : 0
+Parsing : which rockets were launched from baikonur Index: 173
+Number of Derivations : 0
+Parsing : which pope succeeded john_paul_ii Index: 174
+Number of Derivations : 0
+Parsing : Give me all Dutch parties Index: 175
+Number of Derivations : 79
+Parsing : when is halloween Index: 176
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : Give me all Swedish oceanographers Index: 177
+Data Problem! Returned derivations: 85
+Number of Derivations : 0
+Parsing : give me all actors who were born in berlin Index: 178
+Number of Derivations : 0
+Parsing : what was the last movie with alec_guinness Index: 179
+Number of Derivations : 0
+Parsing : what does iycm stand for Index: 180
+Data Problem! Returned derivations: 4
+Number of Derivations : 0
+Parsing : which actor played chewbacca Index: 183
+Number of Derivations : 0
+Parsing : which ingredients do i need for carrot_cake Index: 184
+Number of Derivations : 0
+Parsing : is cola a beverage Index: 185
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : who has tom_cruise been married to Index: 186
+Number of Derivations : 0
+Parsing : which of tim_burton 's films had the highest budget Index: 187
+Number of Derivations : 0
+Parsing : how heavy is jupiter 's lightest moon Index: 188
+Number of Derivations : 0
+Parsing : is james_bond married Index: 189
+Data Problem! Returned derivations: 8
+Number of Derivations : 0
+Parsing : give me all australian metalcore bands Index: 190
+Number of Derivations : 14
+Parsing : when was carlo_giuliani shot Index: 191
+Number of Derivations : 12
+Parsing : give all swimmers that were born in moscow Index: 192
+Number of Derivations : 0
+Parsing : who was called rodzilla Index: 193
+Data Problem! Returned derivations: 24
+Number of Derivations : 0
+Parsing : show me the book that muhammad_ali wrote Index: 194
+Number of Derivations : 0
+Parsing : how many museums does paris have Index: 195
+Number of Derivations : 0
+Parsing : Which city has the most inhabitants Index: 196
+Number of Derivations : 0
+Parsing : Which city has the least inhabitants Index: 197
+Number of Derivations : 0
+Parsing : Give me all the TV shows with Neil Patrick Harris Index: 198
+Number of Derivations : 0
+Parsing : Who wrote The Hunger Games Index: 199
+Data Problem! Returned derivations: 30
+Number of Derivations : 0
+Parsing : what country is mount_everest in Index: 201
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : who is the founder of penguin_books Index: 202
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : which programming languages influenced javascript Index: 203
+Number of Derivations : 0
+Parsing : did che_guevara have children Index: 204
+Number of Derivations : 0
+Parsing : list all the musicals with music by elton_john Index: 205
+Number of Derivations : 48
+Parsing : show me all the breweries in australia Index: 206
+Number of Derivations : 15
+Parsing : when was the titanic completed Index: 207
+Number of Derivations : 8
+Parsing : how much did pulp_fiction cost Index: 208
+Data Problem! Returned derivations: 2
+Number of Derivations : 0
+Parsing : How many airlines are there Index: 209
+Number of Derivations : 0
+Parsing : who played agent_smith in matrix Index: 210
+Number of Derivations : 0
+Parsing : how much carbs does peanut_butter have Index: 211
+Number of Derivations : 0
+Parsing : Which book has the most pages Index: 212
+Number of Derivations : 0
+Parsing : which bridges cross the seine Index: 213
+Data Problem! Returned derivations: 56
+Number of Derivations : 0
+Parsing : who is the mayor of the capital of french_polynesia Index: 214
+Number of Derivations : 0
+Parsing : when did dracula 's creator die Index: 215
+Number of Derivations : 0
+Parsing : what is the location of the houses_of_parliament Index: 216
+Number of Derivations : 0
+Parsing : show me all english_gothic buildings in kent Index: 217
+Number of Derivations : 0
+Parsing : who was the pope that founded the vatican_television Index: 218
+Number of Derivations : 0
+Parsing : what airlines are part of the skyteam_alliance Index: 219
+Number of Derivations : 0
+Parsing : what is the total population of melbourne,_florida Index: 220
+Number of Derivations : 0
+Parsing : which airports does air_china serve Index: 221
+Number of Derivations : 0
+Parsing : in which year was rachel_stevens born Index: 222
+Number of Derivations : 0
+Parsing : where was jfk assassinated Index: 223
+Number of Derivations : 8
+Parsing : which scientist is known for the manhattan_project and the nobel_peace_prize Index: 224
+Number of Derivations : 0
+Parsing : which beer originated in ireland Index: 225
+Number of Derivations : 0
+Parsing : what are the specialities of the unc_health_care Index: 226
+Number of Derivations : 0
+Parsing : who is the owner of facebook Index: 227
+Data Problem! Returned derivations: 32
+Number of Derivations : 0
+Parsing : from which region is the melon_de_bourgogne Index: 228
+Number of Derivations : 0
+Parsing : who was influenced by socrates Index: 229
+Data Problem! Returned derivations: 48
+Number of Derivations : 0
+Parsing : who was president_of_pakistan in 1978 Index: 230
+Number of Derivations : 0
+Parsing : who was married to president chirac Index: 231
+Data Problem! Returned derivations: 70
+Number of Derivations : 0
+Parsing : what is the largest metropolitan area in washington_state Index: 232
+Number of Derivations : 0
+Parsing : where in france is sparkling_wine produced Index: 233
+Number of Derivations : 0
+Parsing : where did hillel_slovak die Index: 234
+Data Problem! Returned derivations: 160
+Number of Derivations : 0
+Parsing : what is the timezone in san_pedro_de_atacama Index: 235
+Number of Derivations : 0
+Parsing : in which city does the chile_route 68 end Index: 236
+Number of Derivations : 0
+Unparsed : 193
+Parsed : 33
+BUILD SUCCESSFUL (total time: 12 minutes 38 seconds)
+

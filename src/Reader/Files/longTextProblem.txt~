@@ -1,0 +1,8 @@
+list all episodes of the first_season of the hbo televisionseries the sopranos
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri dbo:series res:The_Sopranos  .
+        ?uri dbo:seasonNumber 1 .
+}

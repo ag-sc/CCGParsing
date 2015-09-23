@@ -1,0 +1,76 @@
+
+
+who is the daughter of ingrid bergman married to
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Ingrid_Bergman dbo:child ?child .
+        ?child dbo:spouse ?uri .
+}
+
+how many people live in the capital of australia
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+        res:Australia dbo:capital ?x .
+        ?x dbo:populationTotal ?num .
+}
+
+which music albums contain the song last christmas
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?single dbo:album ?uri .
+        ?single rdfs:label 'Last Christmas'@en .
+}
+
+give me all people with first name jimmy
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type foaf:Person.       
+        ?uri foaf:givenName 'Jimmy'@en   .
+}
+
+who was john f. kennedy's vice president
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { res:John_F._Kennedy dbo:vicePresident ?uri . 
+}
+
+who is the formula 1 race driver with the most races
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:FormulaOneRacer . 
+        ?uri dbo:races ?x . 
+} 
+ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1
+
+which monarchs were married to a german
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Monarch . 
+        ?uri dbo:spouse ?spouse .
+        ?spouse dbo:birthPlace res:Germany. 
+}
+
+how many students does the free university in amsterdam have
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?num 
+WHERE { 
+        res:Vrije_Universiteit dbo:numberOfStudents ?num . 
+}
+

@@ -1,0 +1,2 @@
+what is the city in texas with the largest population
+(argmax $0 (and (city:t $0) (loc:t $0 texas:s)) (population:i $0))

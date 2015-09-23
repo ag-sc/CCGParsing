@@ -1,0 +1,579 @@
+which books by kerouac were published by viking press
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Book .
+        ?uri dbo:publisher res:Viking_Press .
+        ?uri dbo:author res:Jack_Kerouac .
+}
+
+which cities does the weser flow through
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Weser dbo:city ?uri . 
+	?uri rdf:type dbo:City.
+}
+
+list all episodes of the first_season of the hbo televisionseries the sopranos
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri dbo:series res:The_Sopranos  .
+        ?uri dbo:seasonNumber 1 .
+}
+
+which instruments does cat stevens play
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Cat_Stevens dbo:instrument ?uri . 
+	?uri rdf:type owl:Thing .
+}
+
+give me all b-sides of the ramones
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?string 
+WHERE {
+        ?x dbo:musicalArtist res:Ramones .
+        ?x dbo:bSide ?string . 
+}
+
+who are the parents of the wife of juan carlos i
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Juan_Carlos_I_of_Spain dbo:spouse ?x . 
+        ?x dbo:parent ?uri . 
+}
+
+where is the residence of the prime minister of spain
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Prime_Minister_of_Spain dbp:residence ?uri .}
+
+who painted the storm on the sea of galilee
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:The_Storm_on_the_Sea_of_Galilee dbo:author ?uri .
+}
+
+give me the birthdays of all actors of the television show charmed
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?date 
+WHERE { 
+        res:Charmed dbo:starring ?actor .
+        ?actor dbo:birthDate ?date .
+}
+
+which software was developed_by organizations founded_in california
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {         
+        ?uri rdf:type dbo:Software .
+        ?company rdf:type dbo:Company .
+        ?uri dbo:developer ?company . 
+        ?company dbo:foundationPlace res:California .
+}
+
+what is the founding year of the brewery that produces pilsner urquell
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+        res:Pilsner_Urquell dbp:brewery ?uri .
+        ?uri dbp:foundation ?num .
+}
+
+in which country does the nile start
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Nile dbo:sourceCountry ?uri . 
+}
+
+which countries have more than two official languages
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Country  .
+        ?uri dbo:officialLanguage ?language .
+} 
+GROUP BY ?uri
+HAVING (COUNT(?language) > 2)
+
+give me all people that were born in vienna and died in berlin
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:birthPlace res:Vienna . 
+        ?uri dbo:deathPlace res:Berlin . 
+}
+
+what is the total amount of men and women serving in the fdny
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?num WHERE { res:New_York_City_Fire_Department dbp:strength ?num . 
+}
+
+who composed the music for harold and maude
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+       res:Harold_and_Maude dbo:musicComposer ?uri .
+}
+
+in which city was the former dutch queen juliana buried
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Juliana_of_the_Netherlands dbo:restingPlace ?uri.
+        ?uri rdf:type dbo:Settlement .
+}
+
+who wrote the book the pillars of the earth
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:The_Pillars_of_the_Earth dbo:author ?uri .
+}
+
+what are the nicknames of san francisco
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?string 
+WHERE { 
+        res:San_Francisco dbp:nickname ?string . 
+}
+
+which companies work in the aerospace industry as well as in medicine
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX res:  <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Company  .
+        ?uri dbo:industry res:Aerospace . 
+        ?uri dbo:industry res:Medicine .
+}
+
+are tree frogs a type of amphibian
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Hylidae dbo:class res:Amphibian . 
+}
+
+which countries have more than ten caves
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Country . 
+	?cave rdf:type dbo:Cave .
+	?cave dbo:location ?uri .  
+} 
+GROUP BY ?uri HAVING(COUNT(?cave) > 10)
+
+which country does the creator of miffy come from
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Miffy dbo:creator ?x .
+        ?x dbo:nationality ?uri .
+}
+
+was margaret thatcher a chemist
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+ASK 
+WHERE { 
+        res:Margaret_Thatcher dbo:profession res:Chemist . 
+}
+
+was marc chagall a jew
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+       res:Marc_Chagall dbp:ethnicity 'Jewish'@en .
+}
+
+how many aldi stores are there
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?number
+WHERE {
+        res:Aldi dbo:numberOfLocations ?number .
+}
+
+was u.s. president jackson involved in a war
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+        res:Andrew_Jackson dbo:battle ?battle .    
+}
+
+in which u.s. state is fort knox located
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Fort_Knox dbp:location ?uri .  
+        ?uri dbo:country res:United_States . 
+}
+
+for which label did elvis record his first album
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?x rdf:type dbo:Album .
+        ?x dbo:artist res:Elvis_Presley .
+        ?x dbo:releaseDate ?y .
+        ?x dbo:recordLabel ?uri .
+}
+ORDER BY ASC(?y) 
+OFFSET 0 LIMIT 1
+
+in which military conflicts did lawrence of arabia participate
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:T._E._Lawrence dbo:battle ?uri . 
+}
+
+who was the first president of the united states
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+         ?uri rdf:type dbo:Person .
+         ?uri dbo:office '1st President of the United States'@en .
+}
+
+give me all cars that are produced in germany
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Automobile . 
+       ?uri dbo:assembly res:Germany . 
+       
+      
+}
+
+how many children did benjamin franklin have
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT (COUNT(DISTINCT ?uri) as ?ss) 
+WHERE { 
+        res:Benjamin_Franklin dbo:child ?uri . 
+}
+
+is michelle obama the wife of barack obama
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Barack_Obama dbo:spouse res:Michelle_Obama . 
+}
+
+give me all actors starring in movies directed by william shatner
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?x dbo:director res:William_Shatner . 
+        ?x dbo:starring ?uri . 
+}
+
+in which programming language is gimp written
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:GIMP dbo:programmingLanguage ?uri .
+}
+
+who produced films starring natalie portman
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?film rdf:type dbo:Film .
+        ?film dbo:starring res:Natalie_Portman .
+        ?film dbo:producer ?uri .
+}
+
+in which films did julia roberts as well as richard gere play
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Film .
+        ?uri dbo:starring res:Julia_Roberts .
+        ?uri dbo:starring res:Richard_Gere.
+}
+
+was natalie portman born in the united states
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE { 
+        res:Natalie_Portman dbo:birthPlace ?city .
+        ?city dbo:country res:United_States .
+}
+
+what is the second highest mountain on earth
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Mountain . 
+        ?uri dbo:elevation ?elevation . 
+} 
+ORDER BY DESC(?elevation) 
+OFFSET 1 LIMIT 1
+
+who wrote the lyrics for the polish national anthem
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Poland dbo:anthem ?x .
+        ?x dbp:author ?uri .
+}
+
+in which city did john f. kennedy die
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:John_F._Kennedy dbo:deathPlace ?uri .
+        ?uri rdf:type dbo:City .
+}
+
+is there a video game called battle chess
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+        ?uri rdf:type dbo:VideoGame .
+        ?uri rdfs:label 'Battle Chess'@en .
+}
+
+in which uk city are the headquarters of the mi6
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:City . 
+        res:Secret_Intelligence_Service dbo:headquarter ?uri . 
+}
+
+what is the longest river
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:River . 
+        ?uri dbo:length ?l . 
+      
+} ORDER BY DESC(?l) 
+OFFSET 0 LIMIT 1
+
+did socrates influence aristotle
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Aristotle dbo:influencedBy res:Socrates . 
+}
+
+in which films directed by garry marshall was julia roberts starring
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri rdf:type dbo:Film .
+        ?uri dbo:starring res:Julia_Roberts .
+        ?uri dbo:director res:Garry_Marshall .
+}
+
+is christian bale starring in velvet goldmine
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE {
+        res:Velvet_Goldmine dbo:starring res:Christian_Bale .
+}
+
+through which countries does the yenisei river flow
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Yenisei_River dbo:country ?uri .
+}
+
+to which countries does the himalayan mountain system extend
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Himalayas dbp:country ?uri . 
+}
+
+give me all cosmonauts
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Astronaut . 
+      ?uri dbo:nationality res:Russia . 
+}
+
+which ships were called after benjamin franklin
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbp:shipNamesake res:Benjamin_Franklin . 
+}
+
+is proinsulin a protein
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+ASK 
+WHERE { 
+        res:Proinsulin rdf:type dbo:Protein . 
+}
+
+did tesla win a nobel prize in physics
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics . 
+}
+
+who is the owner of universal studios
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Universal_Studios dbo:owner ?uri .
+}
+
+who is the daughter of ingrid bergman married to
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Ingrid_Bergman dbo:child ?child .
+        ?child dbo:spouse ?uri .
+}
+
+how many people live in the capital of australia
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+        res:Australia dbo:capital ?x .
+        ?x dbo:populationTotal ?num .
+}
+
+which music albums contain the song last christmas
+PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?single dbo:album ?uri .
+        ?single rdfs:label 'Last Christmas'@en .
+}
+
+give me all people with first name jimmy
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type foaf:Person.       
+        ?uri foaf:givenName 'Jimmy'@en   .
+}
+
+who is the formula 1 race driver with the most races
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:FormulaOneRacer . 
+        ?uri dbo:races ?x . 
+} 
+ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1
+
+which monarchs were married to a german
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Monarch . 
+        ?uri dbo:spouse ?spouse .
+        ?spouse dbo:birthPlace res:Germany. 
+}
+
+how many students does the free university in amsterdam have
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?num 
+WHERE { 
+        res:Vrije_Universiteit dbo:numberOfStudents ?num . 
+}
+
